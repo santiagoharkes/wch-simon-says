@@ -5,7 +5,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 1
+const ULTIMO_NIVEL = 10
 
 class Juego {
 
@@ -20,7 +20,7 @@ class Juego {
         this.siguienteNivel = this.siguienteNivel.bind(this)
         this.elegirColor = this.elegirColor.bind(this)
         this.toggleBtnEmpezar()
-        this.nivel = 10
+        this.nivel = 1
         this.colores = { // Acá ponemos a los BOTONES con el metodo COLORES para tenerlos más fácil
             // celeste: celeste
             // Si queremos en un objeto poner Atributo "celeste" y asignarle el valor que tiene en la variable celeste (la de arriba),
@@ -89,7 +89,7 @@ class Juego {
         
         iluminarSecuencia() {
             for (let i = 0; i < this.nivel; i++) {
-                const color = this.transformarNumeroAColor(this.secuencia[i])
+                let color = this.transformarNumeroAColor(this.secuencia[i])
                 // La función de arriba hace lo siguiente
                 // El parametro this.secuencia[i] hace referencia a la posicion en la secuencia (array)
                 // Si la posición es 1 (primer nivel) y el array es 0 2 2 3 1
