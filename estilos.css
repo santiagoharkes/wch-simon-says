@@ -1,6 +1,11 @@
-      body {
+
+     body {
         margin: 0;
-        background: #dedede;
+        background: #333333;
+        background-image: url("http://1.bp.blogspot.com/-amjHKv3fcBw/UNlGJ1UArAI/AAAAAAAAv4A/rLsljxTY9eg/s1600/1152x864+-+Paisaje+Wallpaper+(1).jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
         display: flex;
         align-items: center;
         height: 100vh;
@@ -70,13 +75,39 @@
 
       .btn-start {
         width: 400px;
-        height: 100px;
-        background: #ecf0f1;
-        color: #2c3e50;
+        height: auto;
+        /* background: #ecf0f1;
+        color: #2c3e50; */
         font-size: 2.5rem;
         position: absolute;
-        top: calc(50% - 50px);
+        /* top: calc(50% - 50px); */
         left: calc(50% - 200px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0.46em 1.6em;
+        border: 0.1em solid #000000;
+        margin: 0 auto;
+        border-radius:0.12em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#000000;
+        text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+        background-color:#FFFFFF;
+        text-align: center;
+        transition: all 0.15s;
+
+
+      }
+
+      .btn-start:hover {
+        text-shadow: 0 0 2em rgba(255,255,255,1);
+        color:#FFFFFF;
+        border-color:#FFFFFF;
       }
 
       .hide {
@@ -85,4 +116,31 @@
 
       * {
           font-family: Arial, Helvetica, sans-serif
+      }
+
+      @media screen and (max-width: 370px) {
+        .gameboard {
+            height: 100vh;
+            width: 100vh;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            max-height: 40vh;
+            max-width: 40vh;
+            transition: 1s cubic-bezier(.42,.97,.52,1.49);
+          }
+
+        .btn-start {
+            font-size: 1.5rem;
+            width: 50%;
+            height: auto;
+            display: flex;
+            left: calc(50% - 90px);
+            position: absolute;
+            margin: 0 auto;
+        }
+
+        .hide {
+            display: none;
+          }
       }

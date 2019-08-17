@@ -7,7 +7,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 3
+const ULTIMO_NIVEL = 10
 var acumRotar = 0
 
 class Juego {
@@ -164,14 +164,14 @@ class Juego {
         }
 
         ganoElJuego(){
-            swal('Biennn!!', 'Ganaste pichissss!', 'success')
+            swal('Biennn!!', 'Ganaste mi amorrr!', 'success')
                 .then (() => {
                     this.inicializar()
                 })
         }
 
         perdioElJuego(){
-            swal('UPSSS', 'No siempre ganas...', 'error')
+            swal('UPSSS', 'No siempre ganas pichis...', 'error')
                 .then (() => {
                     this.eliminarEventosClick()
                     this.inicializar()
