@@ -5,11 +5,12 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 10
+const ULTIMO_NIVEL = 1
 
 class Juego {
 
     constructor() { // En este caso no recibe ningun parámetro pero si métodos/acciones
+        this.inicializar = this.inicializar.bind(this)
         this.inicializar() // Podemos declarar cualquier método/accion de THIS (o sea de JUEGO) aunque no exista, y después escribirla
         this.generarSecuencia()
         setTimeout(this.siguienteNivel, 500)
@@ -18,8 +19,8 @@ class Juego {
     inicializar() {
         this.siguienteNivel = this.siguienteNivel.bind(this)
         this.elegirColor = this.elegirColor.bind(this)
-        btnEmpezar.classList.add('hide')
-        this.nivel = 1
+        this.toggleBtnEmpezar()
+        this.nivel = 10
         this.colores = { // Acá ponemos a los BOTONES con el metodo COLORES para tenerlos más fácil
             // celeste: celeste
             // Si queremos en un objeto poner Atributo "celeste" y asignarle el valor que tiene en la variable celeste (la de arriba),
@@ -28,6 +29,14 @@ class Juego {
             violeta,
             naranja,
             verde
+        }
+    }
+
+    toggleBtnEmpezar(){
+        if (btnEmpezar.classList.contains('hide')) {
+            btnEmpezar.classList.remove('hide')
+        } else {
+            btnEmpezar.classList.add('hide')
         }
     }
 
@@ -135,14 +144,29 @@ class Juego {
                     this.nivel++
                     this.eliminarEventosClick()
                     if (this.nivel === (ULTIMO_NIVEL + 1)) {
-                        // GANO
+                        this.ganoElJuego()
                     } else {
                         setTimeout(this.siguienteNivel, 1300)
                     }
                 }
             } else {
-                // PERDIO
+                this.perdioElJuego()
             }
+        }
+
+        ganoElJuego(){
+            swal('Biennn!!', 'Ganaste pichissss!', 'success')
+                .then (() => {
+                    this.inicializar()
+                })
+        }
+
+        perdioElJuego(){
+            swal('UPSSS', 'No siempre ganas...', 'error')
+                .then (() => {
+                    this.eliminarEventosClick()
+                    this.inicializar()
+                })
         }
 }
 
