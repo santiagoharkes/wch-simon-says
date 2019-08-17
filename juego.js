@@ -1,11 +1,14 @@
 // Acá tomamos los elementos de HTML para usarlos después
 
+const gameboard = document.getElementById('gameboard')
+const giroMagico = document.querySelector('.rotate')
 const celeste = document.getElementById('celeste')
 const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 10
+const ULTIMO_NIVEL = 3
+var acumRotar = 0
 
 class Juego {
 
@@ -146,12 +149,18 @@ class Juego {
                     if (this.nivel === (ULTIMO_NIVEL + 1)) {
                         this.ganoElJuego()
                     } else {
+                        this.rotar()
                         setTimeout(this.siguienteNivel, 1300)
                     }
                 }
             } else {
                 this.perdioElJuego()
             }
+        }
+
+        rotar(){
+            acumRotar += 45
+            gameboard.style.transform = `rotate(${acumRotar}deg)`
         }
 
         ganoElJuego(){
