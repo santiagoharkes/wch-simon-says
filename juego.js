@@ -7,7 +7,8 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
-const ULTIMO_NIVEL = 10
+const container = document.getElementById('container')
+const ULTIMO_NIVEL = 3
 var acumRotar = 0
 
 class Juego {
@@ -36,10 +37,13 @@ class Juego {
     }
 
     toggleBtnEmpezar(){
+
         if (btnEmpezar.classList.contains('hide')) {
             btnEmpezar.classList.remove('hide')
+            container.classList.add('blur')
         } else {
             btnEmpezar.classList.add('hide')
+            container.classList.remove('blur')
         }
     }
 
@@ -105,7 +109,7 @@ class Juego {
 
         iluminarColor(color) {
             this.colores[color].classList.add('light')
-            setTimeout(() => this.apagarColor(color), 350)
+            setTimeout(() => this.apagarColor(color), 150)
         }
 
         apagarColor(color) {
