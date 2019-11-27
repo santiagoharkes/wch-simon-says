@@ -1,0 +1,359 @@
+body {
+    margin: 0px;
+    background-color: #008c8e;
+    font-family: 'Muli', sans-serif;
+}
+
+.header {
+    background-color: #008c8e;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__img svg {
+    width: 70px;
+    margin-left: 1em;
+    fill: #454545;
+}
+
+.header__img svg:hover {
+    fill: #56bbbd;
+}
+
+.header__menu {
+    margin-right: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.header__menu--profile {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.header__menu--profile img {
+    margin-right: 8px;
+    width: 40px;
+}
+
+.header__menu--profile p {
+    margin: 0px;
+    text-align: right;
+    color: white;
+}
+
+.header__menu:hover ul,
+ul:hover {
+    display: block;
+}
+
+.header__menu li {
+    margin: 10px 0px;
+}
+
+.header__menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+
+.header__menu ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0px 0px 0px -11px;
+}
+
+.registro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 0px;
+    min-height: calc(100vh - 500px)
+}
+
+.registro__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.registro__container--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registro__container--remember label {
+    font-size: 14px;
+}
+
+.registro__container--remember {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.registro__container--remember a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.registro__container--remember a:hover {
+    text-decoration: underline;
+}
+
+.registro__container--socialmedia>div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.registro__container--socialmedia>div>img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.registro__container--register {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.registro__container--register a {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.registro__container--register a:hover {
+    text-decoration: underline;
+}
+
+.registro__container--iniciarsesion {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registro__container--iniciarsesion a {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registro__container--iniciarsesion a:hover {
+    text-decoration: underline;
+}
+
+.input {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    font-family: 'Muli', sans-serif;
+    margin-bottom: 20px;
+    padding: 20px 20px;
+    outline: none;
+    color: white;
+}
+
+.input::placeholder {
+    color: white;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.footer a {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.blur {
+    filter: blur(8px);
+}
+
+.grid {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameboard {
+    position: relative;
+    margin: 0 auto;
+    background: black;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s cubic-bezier(.42, .97, .52, 1.49);
+}
+
+.rotate {
+    transition: 1200ms;
+    transform: rotate(45deg);
+}
+
+.botones {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+}
+
+.celeste {
+    background: #008cff;
+    top: 0;
+    left: 0;
+    border-radius: 100% 0 0 0;
+}
+
+.celeste.light {
+    background: #81c5fd;
+}
+
+.violeta {
+    background: #cc00ff;
+    top: 0;
+    right: 0;
+    border-radius: 0 100% 0 0;
+}
+
+.violeta.light {
+    background: #e26eff;
+}
+
+.naranja {
+    background: #ff8800;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.naranja.light {
+    background: #ffb764;
+}
+
+.verde {
+    background: #0daf07;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 100% 0;
+}
+
+.verde.light {
+    background: #56ff50;
+}
+
+.centro {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    border: 20px solid black;
+    border-radius: 50%;
+    top: calc(50% - 95px);
+    left: calc(50% - 95px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centroTexto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 50px;
+    width: 120px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.btn-start {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% - 100px);
+    font-size: 1.5rem;
+    border-radius: 10%;
+}
+
+.hide {
+    display: none;
+}
+
+.score {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .registro__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 70%;
+    }
+}
