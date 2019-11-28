@@ -8,8 +8,10 @@ const naranja = document.getElementById("naranja");
 const verde = document.getElementById("verde");
 const btnEmpezar = document.getElementById("btnEmpezar");
 const container = document.getElementById("container");
+// const count = document.getElementById("scoreCount");
 const ULTIMO_NIVEL = 3;
 var acumRotar = 0;
+var acumCount = 0;
 
 class Juego {
   constructor() {
@@ -157,12 +159,17 @@ class Juego {
           this.ganoElJuego();
         } else {
           this.rotar();
+          this.displayCounter();
           setTimeout(this.siguienteNivel, 1300);
         }
       }
     } else {
       this.perdioElJuego();
     }
+  }
+
+  displayCounter() {
+    document.getElementById("scoreCount").innerHTML = acumCount += 1;
   }
 
   rotar() {
