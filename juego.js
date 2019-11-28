@@ -9,7 +9,7 @@ const verde = document.getElementById("verde");
 const btnEmpezar = document.getElementById("btnEmpezar");
 const container = document.getElementById("container");
 // const count = document.getElementById("scoreCount");
-const ULTIMO_NIVEL = 3;
+const ULTIMO_NIVEL = 5;
 var acumRotar = 0;
 var acumCount = 0;
 
@@ -23,6 +23,7 @@ class Juego {
   }
 
   inicializar() {
+    document.getElementById("scoreCount").innerHTML = 0;
     this.siguienteNivel = this.siguienteNivel.bind(this);
     this.elegirColor = this.elegirColor.bind(this);
     this.toggleBtnEmpezar();
@@ -156,7 +157,9 @@ class Juego {
         this.nivel++;
         this.eliminarEventosClick();
         if (this.nivel === ULTIMO_NIVEL + 1) {
+          this.displayCounter();
           this.ganoElJuego();
+          this.resetCount();
         } else {
           this.rotar();
           this.displayCounter();
@@ -165,11 +168,16 @@ class Juego {
       }
     } else {
       this.perdioElJuego();
+      this.resetCount();
     }
   }
 
   displayCounter() {
     document.getElementById("scoreCount").innerHTML = acumCount += 1;
+  }
+
+  resetCount() {
+    return (acumCount = 0);
   }
 
   rotar() {
@@ -178,13 +186,21 @@ class Juego {
   }
 
   ganoElJuego() {
-    swal("Biennn!!", "Llegaste hasta el final!", "success").then(() => {
+    swal(
+      "Biennn!!",
+      `Llegaste hasta el final! Tu puntaje es de ${acumCount}`,
+      "success"
+    ).then(() => {
       this.inicializar();
     });
   }
 
   perdioElJuego() {
-    swal("UPSSS", "Intentá de nuevo!", "error").then(() => {
+    swal(
+      "UPSSS",
+      `Seguí intentando! Tu puntaje fue de ${acumCount}`,
+      "error"
+    ).then(() => {
       this.eliminarEventosClick();
       this.inicializar();
     });
