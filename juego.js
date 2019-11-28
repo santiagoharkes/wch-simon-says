@@ -160,6 +160,7 @@ class Juego {
           this.displayCounter();
           this.ganoElJuego();
           this.resetCount();
+          this.resetRotar();
         } else {
           this.rotar();
           this.displayCounter();
@@ -169,6 +170,7 @@ class Juego {
     } else {
       this.perdioElJuego();
       this.resetCount();
+      this.resetRotar();
     }
   }
 
@@ -183,6 +185,10 @@ class Juego {
   rotar() {
     acumRotar += 45;
     gameboard.style.transform = `rotate(${acumRotar}deg)`;
+  }
+
+  resetRotar() {
+    gameboard.style.transform = `rotate(0deg)`;
   }
 
   ganoElJuego() {
